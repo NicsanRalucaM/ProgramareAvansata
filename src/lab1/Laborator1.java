@@ -29,7 +29,7 @@ public class Laborator1 {
             n = sum;
             System.out.println(sum);
             sum = 0;
-        } while (n > 10);
+        } while (n > 9);
         System.out.println(n);
         System.out.println("Willy-nilly, this semester I will learn " + languages[n]);
     }
