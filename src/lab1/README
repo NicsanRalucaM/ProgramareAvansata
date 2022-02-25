@@ -1,0 +1,11 @@
+Laborator1:
+In clasa Laborator1 din pachetul lab1, in metoda main:
+  Am declarat o matrice de siruri languages, cu continutul specificat:{"C", "C++", "C#", "Python", "Go", "Rust", "JavaScript", "PHP", "Swift", "Java"}
+  Am declarat o variabila int n, pe care am intializat-o cu un nr. generat random.
+   In continuare, am urmat operatiile indicate, inmultindu-l pe n cu 3 si adunandu-l cu nr. binar 10101 si nr. hexazecimal FF, pe care le-am transformat in int
+  cu ajutotul metodei parseInt, inmultind rezultatul acestor operatii cu 6.
+  Intr-o bucla while am calculat suma cifrelor rezultatului curent, cat timp aceasta suma era strict mai mare ca 9.
+  Rezultatul curent care este actualizat cu valoarea sumei, in cadrul unei bucle do while, cat timp se respecta conditia mentionata.
+  La sfarsit, se afiseaza: "Willy-nilly, this semester I will learn " + languages[rezultatFinal].
+  
+  
