@@ -1,0 +1,7 @@
+Sunt cele 3 clase principale: Room, Event si Main.
+      - clasele Lab si Course extind clasa Event, mostenindu-i metodele si atributele.
+      - clasa Room are atributul type, care este de tip RoomType, definit in fisierul RoomType.java ca fiind un enum.
+  Au fost generati constructori, getters si setters pentru clasele Room si Event, precum si constructorii claselor Lab si Course.
+  Pentru afisarea obictelor instantiate a fost suprascrisa metoda toString, care va returna informatiile specifice fiecarei clase.
+In clasa Main sunt declarate si instantiate obiectele mentionate in cerinta, prin apelul constructorilor corespunzatori si sunt afisate atributele fiecarui obiect instantiat, prin apelul metodei toString.
+ 
