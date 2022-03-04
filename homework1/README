@@ -1,1 +1,48 @@
+Homework:
+ Se valideaza argumentele in metoda validareArgumente, care verifica:- daca nr de argumente este >=3 (n, p si cel putin o litera) 
+                                                                     - daca primele doua argumente sunt integer
+                                                                     - daca restul argumentelor sunt litere
+ Daca argumentele nu sunt valide, se afiseaza mesajele corespunzatoare si se opreste programul.
+ Daca argumentele sunt valide, se continua prin declararea variabilelor, array-urilor si obiectelor pe care le voi folosi:
+ 
+  -> int n = Integer.parseInt(args[0]) - nr. de string-uri care se vor genera random cu literele date ca argumente
+  -> int p = Integer.parseInt(args[1]) - nr. care reprezinta lungimea pe care il va avea avea fiecare string generat
+  -> int m = args.length - 2           - nr. de litere date ca argumente
 
+   -> char[] alphabet = new char[m]    - array de caractere care va pastra cele m litere date ca argumente
+   -> String[] words = new String[n]   - array de string-uri care va memora cele n string-uri generate random cu literele din alphabet, avand exact p litere
+
+   -> Boolean[][] neighborsAdjacency = new Boolean[n][n] - matrice nxn cu valori booleene , reprezentand adiacenta cuv. generate
+   -> String[][] neighbors = new String[n][]             - structura de date care pastreaza vecinii fiecarui cuv.
+   -> int[] nrNeighbors = new int[n]                     - array de int-uri, reprezentand nr. de vecini al fiecarui cuv. generat
+   -> int[] nrNeighborsCopy = new int[n]                 - o copie a nrNeighbors
+  
+ Dupa ce se genereaza cuvintele, cu ajutorul metodei createRandomWord, care este apelata avand ca parametri: p si alphabet.
+ Se parcurge portiunea de sub diagonala principala in matricea de adiacenta, luandu-se pe rand cate doua cuvinte.
+ Se parcurg literele cuv curent:
+    - daca nu se gaseste nicio litera comuna, atunci se actualizeaza in matrice ca cele doua cuvinte nu sunt adiacente
+    - daca se gaseste o prima litera comuna intre cuv curent si cel cu care se compara-> se inlocuiesc toate aparitile literei in cuv comparat cu '-', cu metoda replace, si se continua parcurgerea
+          - daca se gaseste si a doua litera, atunci e sigur ca cele doua cuv nu sunt vecine, se opreste parcurgerea si se aduce cuv cu care se compara la starea intiala
+              se actualizeaza in matrice ca cele doua cuvinte nu sunt adiacente
+          - daca nu se gaseste si a doua litera, se aduce cuv comparat la forma intiala si actualizeaza valoarea matricea de adiacenta la poz celor doua cuv cu true, insemnand ca cele doua cuv sunt adiacente
+            dupa se incrementeaza si nrNeighbors pentru fiecare dintre cele doua cuv, intrucat a fost gasit un nou veci
+            
+  Se afiseaza matricea de adiacenta a cuv. generate si se face copia nrNeighborsCopy cu ajutorul metodei arraycopy a clasei System.
+  Se aloca spatiu in neighbors, pentru lista de vecini a fiecarui cuv, in functie de nrNeighbors al acestora, iar in cazul cuv care au cel putin un vecin se decrementeaza nrNeighbors, pentru pozitionarea corecta in structura de date
+  
+  Pentru a se forma structura de date care contine listele cu vecini, se parcurge portiunea de sub diagonala principala a matricei de adiacenta:
+      - pentru fiecare pereche de cuv adiacente gasite, se completeaza lista acestora de vecini, asezandu-le pe pozitia nr. de vecini curent al cuvantului
+         iar pentru ca am adaugat un nou vecin, nrNeighbors al cuv se decremeneteaza, dar doar daca cuv mai are cel putin un vecin de adaugat in lista
+  Folosind copia nrNeighborsCopy, se parcurge structura de date neighbors si se afiseaza lista de vecini a fiecarui cuv.
+         
+  
+  
+           
+ 
+                                                                     
+                                                                     
+                                                                     
+                                                                     
+                                                                     
+                                                                     
+                                         
