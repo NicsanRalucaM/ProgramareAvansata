@@ -68,7 +68,7 @@ public class Homework {
         Boolean[][] neighborsAdjacency = new Boolean[n][n];// matrice nxn cu valori booleene , reprezentand adiacenta cuv. generate
         String[][] neighbors = new String[n][];// structura de date care pastreaza vecinii fiecarui cuv.
         int[] nrNeighbors = new int[n];// array de int-uri, reprezentand nr. de vecini al fiecarui cuv. generat
-        int[] nrNeighborsCopy = new int[n];
+        
 
         for (int i = 0; i < m; i++) {    //preluarea literelor date ca argumente
             alphabet[i] = args[i + 2].charAt(0);
@@ -124,6 +124,7 @@ public class Homework {
             System.out.println();
         }
         // se face o copie a nr de vecini, folosita pentru afisarea structurii de date
+        int[] nrNeighborsCopy = new int[n];
         System.arraycopy(nrNeighbors, 0, nrNeighborsCopy, 0, nrNeighbors.length);
 
         for (int i = 0; i < n; i++) { // se declara spatiul ocupat in memorie, in functie de nr de vecini
