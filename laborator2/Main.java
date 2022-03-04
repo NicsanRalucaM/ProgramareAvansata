@@ -6,8 +6,7 @@ public class Main {
     public static void main(String[] args) {
 
 
-        // Room 401 = new Room();
-        //401(lab,10);
+      
         Course C1 = new Course("C1", 100, 8, 10);
         Course C2 = new Course("C2", 100, 10, 12);
         Lab L1 = new Lab("L1", 30, 8, 10);
