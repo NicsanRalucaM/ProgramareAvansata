@@ -18,11 +18,10 @@ public class Homework {
     static boolean validareArgumente(String[] args) {
         int n = 0, p = 0;
         int m = args.length - 2;
-        if (args.length < 3) {   // se verifica nr de arg ( cel putin 3 trebuie sa fie )
+        if (args.length < 3) {   
             System.out.println("incomplete arguments!");
             return false;
         }
-        // se verifica daca primele 2 arg sunt integer, in caz negativ se arunca o exceptie
         try {
             n = Integer.parseInt(args[0]);
             //System.out.println("n:" + n + " is an integer");
@@ -39,7 +38,6 @@ public class Homework {
             System.out.println("p: " + p + "is not an integer");
             return false;
         }
-        //se verifica daca restul argumentelor sunt litere
         for (int i = 0; i < m; i++) {
             if (!Character.isLetter(args[i + 2].charAt(0))) {
                 System.out.println("Character: " + args[i + 2].charAt(0) + " at position: " + (i + 2) + " is not a Letter!! ");
@@ -58,8 +56,8 @@ public class Homework {
         }
         System.out.println("Arguments are ok! ");
 
-        int n = Integer.parseInt(args[0]);// nr. de string-uri care se vor genera random cu literele date ca argumente
-        int p = Integer.parseInt(args[1]);// nr. care reprezinta lungimea pe care il va avea avea fiecare string generat
+        int n = Integer.parseInt(args[0]);
+        int p = Integer.parseInt(args[1]);
         int m = args.length - 2;// nr. de litere date ca argumente
 
         char[] alphabet = new char[m]; // array de caractere care va pastra cele m litere date ca argumente
@@ -70,7 +68,7 @@ public class Homework {
         int[] nrNeighbors = new int[n];// array de int-uri, reprezentand nr. de vecini al fiecarui cuv. generat
         
 
-        for (int i = 0; i < m; i++) {    //preluarea literelor date ca argumente
+        for (int i = 0; i < m; i++) {    
             alphabet[i] = args[i + 2].charAt(0);
         }
         System.out.println("n:" + n + "\np:" + p);
@@ -78,7 +76,7 @@ public class Homework {
         System.out.println("......");
 
         // se genereaza cele n string-uri, prin apelul metodei createRandomWord si se memoreza in words,
-        for (int i = 0; i < n; i++) {  // la apel se dau ca parametri:p-lungimea unui cuv si alfabetul care contine literele date ca argumente.
+        for (int i = 0; i < n; i++) { 
             words[i] = createRandomWord(p, alphabet);
         }
         System.out.print(words[0]);
@@ -93,7 +91,7 @@ public class Homework {
             neighborsAdjacency[i][i] = false;  // se trateaza diagonala principala
             for (int j = 0; j < i; j++) {    // datorita simetriei, se va parcurge doar sub diagonala principala
                 nrCharCom = 0;
-                for (int k = 0; k < p && nrCharCom < 2; k++) { //se parcurge cuv. curent,
+                for (int k = 0; k < p && nrCharCom < 2; k++) { 
                     if (words[j].indexOf(words[i].charAt(k)) != -1) {  //daca se gaseste al doilea caracter comun nu are rost sa continuam, deci se opreste parcurgerea
                         nrCharCom++;
                         if (nrCharCom == 1) { //se inlocuieste primul caracter comun in cuv comparat cu '-'
@@ -108,7 +106,7 @@ public class Homework {
                 if (nrCharCom == 1) {  // daca s-a gasit exact un caracter comun, atunci cele doua cuv sunt adiacente
                     neighborsAdjacency[i][j] = true;
                     neighborsAdjacency[j][i] = true;
-                    nrNeighbors[i] += 1; // se incrementeaza si nr vecinilor celor doua cuv
+                    nrNeighbors[i] += 1; 
                     nrNeighbors[j] += 1;
                 } else {
                     neighborsAdjacency[i][j] = false;
@@ -116,7 +114,7 @@ public class Homework {
                 }
             }
         }
-        //se afiseaza matricea de adiacenta
+        
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 System.out.print(neighborsAdjacency[i][j] + " ");
@@ -129,23 +127,23 @@ public class Homework {
 
         for (int i = 0; i < n; i++) { // se declara spatiul ocupat in memorie, in functie de nr de vecini
             neighbors[i] = new String[nrNeighbors[i]];
-            if (nrNeighbors[i] >= 1)  //daca un cuv are cel putin un vecin
-                nrNeighbors[i]--; // se decrementeaza nr, astfel incat sa putem aseza vecinii pe pozitia corespunzatoare in structura
+            if (nrNeighbors[i] >= 1) 
+                nrNeighbors[i]--; 
         }
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < i; j++) {
-                if (neighborsAdjacency[i][j]) {  // se parcurge matricea de adiacenta, iar prentru val de true(pt cuv adiacente)
-                    neighbors[i][nrNeighbors[i]] = words[j];  // se intregeste lista de vecini
+                if (neighborsAdjacency[i][j]) {  
+                    neighbors[i][nrNeighbors[i]] = words[j];  
                     neighbors[j][nrNeighbors[j]] = words[i];
-                    if (nrNeighbors[i] >= 1)   // daca cuv mai au cel putin un vecin, se pregateste pozitia urmatorului
-                        nrNeighbors[i]--;       // scanzand nr de vecini care au ramas de adaugat
+                    if (nrNeighbors[i] >= 1)  
+                        nrNeighbors[i]--;     
                     if (nrNeighbors[j] >= 1)
                         nrNeighbors[j]--;
                 }
             }
         }
-        // se afiseaza structura de date
+       
         for (int i = 0; i < n; i++) {
             System.out.print(words[i] + ": ");
             for (int j = 0; j < nrNeighborsCopy[i]; j++) {
