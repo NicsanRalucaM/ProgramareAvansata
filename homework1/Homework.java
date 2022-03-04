@@ -84,8 +84,8 @@ public class Homework {
             System.out.print("  " + words[i]);
         }
         System.out.println("\n.............................");
-        int nrCharCom = 0;// var. va reprezenta nr. de caractere comune intre doua cuvinte
-        char ch = '\0';   // var. va reprezenta primul caracter comun al celor doua cuvinte curente
+        int nrCharCom = 0;// var. va reprezenta nr. de litere comune intre doua cuvinte
+        char ch = '\0';   // var. va reprezenta prima lietra comuna a celor doua cuvinte curente
 
         for (int i = 0; i < n; i++) {
             neighborsAdjacency[i][i] = false;  // se trateaza diagonala principala
@@ -94,7 +94,7 @@ public class Homework {
                 for (int k = 0; k < p && nrCharCom < 2; k++) { 
                     if (words[j].indexOf(words[i].charAt(k)) != -1) {  
                         nrCharCom++;
-                        if (nrCharCom == 1) { //se inlocuieste primul caracter comun in cuv comparat cu '-'
+                        if (nrCharCom == 1) { //se inlocuieste prima litera comuna in cuv cu care s-a comparat cu '-'
                             ch = words[i].charAt(k);
                             words[j] = words[j].replace(ch, '-');
                         }
@@ -103,7 +103,7 @@ public class Homework {
                 if (nrCharCom != 0) // se aduce cuv modificat la forma sa initiala
                     words[j] = words[j].replace('-', ch);
 
-                if (nrCharCom == 1) {  // daca s-a gasit exact un caracter comun, atunci cele doua cuv sunt adiacente
+                if (nrCharCom == 1) {  // daca s-a gasit o litera comuna, atunci cele doua cuv sunt adiacente
                     neighborsAdjacency[i][j] = true;
                     neighborsAdjacency[j][i] = true;
                     nrNeighbors[i] += 1; 
