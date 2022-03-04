@@ -92,7 +92,7 @@ public class Homework {
             for (int j = 0; j < i; j++) {    // datorita simetriei, se va parcurge doar sub diagonala principala
                 nrCharCom = 0;
                 for (int k = 0; k < p && nrCharCom < 2; k++) { 
-                    if (words[j].indexOf(words[i].charAt(k)) != -1) {  //daca se gaseste al doilea caracter comun nu are rost sa continuam, deci se opreste parcurgerea
+                    if (words[j].indexOf(words[i].charAt(k)) != -1) {  
                         nrCharCom++;
                         if (nrCharCom == 1) { //se inlocuieste primul caracter comun in cuv comparat cu '-'
                             ch = words[i].charAt(k);
