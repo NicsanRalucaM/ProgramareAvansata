@@ -1,1 +1,21 @@
-
+Pachetul laborator2 contine:
+   -> Clasa Event: - cu atributele private String name si 3 int size,begin si end;
+                  - constructori si metodele de setare si obtinere a atributelor specificate
+                  - metoda equals pentru a deosebi doua obicte de tip Event
+                  - metoda compareTo, care este implementata pentru interfata Comparable, astfel incat cand se aplereaza Arrays.sort pentru un array de obiecte de tip Event se va face compararea dupa criteriul specificat in metoda suprascrisa compareTo
+                  - metoda toString pentru afisare
+                  
+   -> Clasa abstracta Room: - are 2 atribute protected: String nume si int capacity
+                            -  constructori si metodele de setare si obtinere a atributelor specificate
+                            - metoda equals pentru a deosebi doua obicte de tip Room
+                            - metoda compareTo, care este implementata pentru interfata Comparable, astfel incat cand se aplereaza Arrays.sort pentru un array de obiecte de tip Room se va face compararea dupa criteriul specificat in metoda suprascrisa compareTo
+                            - metoda toString pentru afisare
+                            
+   -> Clasele ComputerLab si LectureHall sunt clase extind clasa Room: - au in plus doua atribute private specifice String system si String videoProjector
+                                                                       - au constructori si metodele specifice pentru cele doua variabile
+                                                                       - ele mostenesc toate atributele si metodele declarate public si protected de la clasa Room
+   -> Clasa Problem:
+   -> Clasa Solution:
+   -> Clasa abstracta Algorithm:
+   ->Clasele GreedyAlgorithm si DSaturAlgorithm:
+   -> Clasa Main
