@@ -14,8 +14,52 @@ Pachetul laborator2 contine:
    -> Clasele ComputerLab si LectureHall sunt clase extind clasa Room: - au in plus doua atribute private specifice String system si String videoProjector
                                                                        - au constructori si metodele specifice pentru cele doua variabile
                                                                        - ele mostenesc toate atributele si metodele declarate public si protected de la clasa Room
-   -> Clasa Problem:
-   -> Clasa Solution:
-   -> Clasa abstracta Algorithm:
-   ->Clasele GreedyAlgorithm si DSaturAlgorithm:
-   -> Clasa Main
+                                                                       
+   -> Clasa Problem: - reprezinta datele problemei, ea are un array de Event-uri numit events si unul Room-uri numit rooms, astfel incat trebuie fiecarui Event (daca este posibil) cate un Room
+                        si folosim cat mai putine obiecte de tip Room
+                     - si metodele corespunzatoare de get si set
+                     - are si metoda toString folosita pentru afisare
+                     
+   -> Clasa Solution: - modeleaza solutia problemei, ea contine un array de Room-uri -assignment, astfel pentru Event-ul i din events a fost atribuita Room-ul assignment[i]
+                      - metoda computeUsedRooms care returneaza un int reprezentand nr de Room-uri care a fost folosit
+                      - metoda toString pentru a afisa assignment-ul
+                     
+   -> Clasa abstracta Algorithm: - reprezinta partea comuna a celor doi algoritmi de rezolvare
+                                 - contine structurile de date protected, precum: - datele de intrare ale problemei (Problem problem)
+                                                                                  - solutia (Solution sol)
+                                                                                  - matricea de adiacenata a grafului (Boolean[][] graphAdjacency)
+                                                                                      -> fiecare Event reprezinta un nod
+                                                                                      -> exista adiacenta intre Event-urile care au o intersectie temporala
+                                                                                  - alte array-uri folosite in cadrul algoritmilor:assignment, rooms si events
+                                                                                  - nr de Event-uri ( int n)
+                                 - metoda representGraph care creeaza matricea de adiacenta a grafului
+                                 - metoda abstracta solve care trebuie implementata de fiecare clasa care extinde clasa Algorithm 
+                                 
+   -> Clasele GreedyAlgorithm si DSaturAlgorithm: sunt clase ce extind clasa Algorithm, deci mostenesc atributele si metodele acesteia
+                              GreedyAlgorithm: - are constructori si metoda solve de tip Solution
+                                               - implementarea algoritmului se afla in metoda solve si consta in: - sortarea rooms si events descrescator in functie de capacity si size
+                                                                                                                  - formarea matricei de adiacenta
+                                                                                                                  - se atribuie primului eveniment o sala
+                                                                                                                  - se parcurge array-ul de Event-uri: - se verifica daca acesta are noduri adiacente carora le-a fost atribuita sala curenta
+                                                                                                                                                       - in functie de asta se stabileste daca se poate atribui din nou o sala care a mai fost atribuite
+                                                                                                                                                        - sau trebuie folosita una noua
+                                                                                                                                                        - evident atribuirea se face si in finctie de capacitatea salii si size-ul evenimentului
+                                                                                                                        - se seteaza assignmentul solutiei cu assignmentul format si se returneaza solutia
+                            DSaturAlgorithm: - are constructori si metoda solve de tip Solution
+                                             - implementarea algoritmului se afla in metoda solve si consta in: - sortarea rooms si events crescator si descrescator in functie de capacity si size
+                                                                                                                - formarea matricei de adiacenta
+                                                                                                                --> diferenta intre el si Greedy este modul de alegere a evenimentelor
+                                                                                                                -> primul nod este de aceasta data cel cu gradul maxim din graf
+                                                                                                                - se atribuie evenimentului care reprezinta nodul o sala
+                                                                                                                - pentru celelalte noduri care au ramas: - se alege la fiecare pas nodul cu gradul de saturatie cel mai mare dintre nodurile care nu au inca atribuite o sala
+                                                                                                                                                               -daca exista mai multe noduri cu acelasi grad de saturatie se alege nodul cu cei mai multi vecini
+                                                                                                                                                         - se reiau pasii de la greedy: - se verifica daca acesta are noduri adiacente carora le-a fost atribuita sala curenta
+                                                                                                                                                                                        - in functie de asta se stabileste daca se poate atribui din nou o sala care a mai fost atribuite
+                                                                                                                                                                                        - sau trebuie folosita una noua
+                                                                                                                                                                                        - evident atribuirea se face si in finctie de capacitatea salii si size-ul evenimentului
+                                                                                                                - - se seteaza assignmentul solutiei cu assignmentul format si se returneaza solutia
+
+-> Clasa Main: - se instantiaza evenimentele si salile 
+               - se instantiaza si problema si se seteaza datele de intrare declarate anterior
+               - se creeaza solutii instantiate cu solutiie fiecarui algoritm
+               - se afiseaza solutiile
