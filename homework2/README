@@ -2,8 +2,8 @@ Pachetul laborator2 contine:
    -> Clasa Event: - cu atributele private String name si 3 int size, begin si end;
                   - constructori si metodele de setare si obtinere a atributelor specificate
                   - metoda equals pentru a deosebi doua obicte de tip Event
-                  - metoda compareTo, care este implementata pentru interfata Comparable, astfel incat cand se apeleaza Arrays.sort pentru ordonarea unui array de obiecte de tip Event 
-                      se va face compararea dupa criteriul specificat in metoda suprascrisa compareTo
+                  - metoda compareTo, care este implementata pentru interfata Comparable, astfel incat cand se apeleaza Arrays.sort pentru ordonarea unui array de obiecte de tip
+                      Event se va face compararea dupa criteriul specificat in metoda suprascrisa compareTo
                   - metoda toString pentru afisare
                   
 -> Clasa abstracta Room: - are 2 atribute protected: String nume si int capacity
