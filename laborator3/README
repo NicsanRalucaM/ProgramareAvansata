@@ -1,0 +1,18 @@
+Clasa Node -> clasa abstracta care implementeaza interfata Comparable
+           -> are atributele private:String name, String hardwareAddress, String location, String addressIP, Map<Node, Integer> cost;
+           -> Un constructor cu atributul name, unul cu toate atributele + metodele de get si set pentru atribute
+           -> este suprascrisa metoda compareTo, astfel incat compararea intre doua noduri sa se faca in functie de numele acestora
+           -> metoda toString folosita pentru afisare
+           
+Clasele Switch si Router doar extind clasa Node si au constructori specifici cu nume.
+Clasa Computer extinde Clasa Node dar implementeaza si interfetele Identifiable, Storage: are atributele private String address, int storageCapacity;
+                                                                               - constructorii+ metodele de set
+                                                                               - implementeaza metoda  String getAddress() din Identifiable si int getStorageCapacity din Storage 
+                                                  
+ Clasa Network are un atribut privat o lista de noduri nodes: constructorii+ metodele de set si get
+                                                       -metoda  void addNode de a dauga noduri in lista
+                                                       -metoda toString pentru afisare, in care inainte de afisare este apelata metoda Collections.sort(nodes)
+                                                         astfel incat sa se afiseze nodurile din Network dupa numele acestora
+ Clasa Main: - sunt instantiate mai multe obiecte care extind clasa Node
+            - este instantiat si un obiect Network A, la care sunt adaugate nodurile
+            - se afiseaza nodurile lui A
