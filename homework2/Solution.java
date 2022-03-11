@@ -33,7 +33,7 @@ public class Solution {
             for (int j = i + 1; j < assignment.length; j++)
                 if (assignment[i] == assignment[j])
                     nr++;
-        return assignment.length - 1;
+        return assignment.length - nr;
 
 
     }
