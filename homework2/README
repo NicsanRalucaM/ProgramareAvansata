@@ -2,21 +2,23 @@ Pachetul laborator2 contine:
    -> Clasa Event: - cu atributele private String name si 3 int size,begin si end;
                   - constructori si metodele de setare si obtinere a atributelor specificate
                   - metoda equals pentru a deosebi doua obicte de tip Event
-                  - metoda compareTo, care este implementata pentru interfata Comparable, astfel incat cand se aplereaza Arrays.sort pentru un array de obiecte de tip Event se va face compararea dupa criteriul specificat in metoda suprascrisa compareTo
+                  - metoda compareTo, care este implementata pentru interfata Comparable, astfel incat cand se aplereaza Arrays.sort pentru un array de obiecte de tip Event 
+                      se va face compararea dupa criteriul specificat in metoda suprascrisa compareTo
                   - metoda toString pentru afisare
                   
-   -> Clasa abstracta Room: - are 2 atribute protected: String nume si int capacity
-                            -  constructori si metodele de setare si obtinere a atributelor specificate
-                            - metoda equals pentru a deosebi doua obicte de tip Room
-                            - metoda compareTo, care este implementata pentru interfata Comparable, astfel incat cand se aplereaza Arrays.sort pentru un array de obiecte de tip Room se va face compararea dupa criteriul specificat in metoda suprascrisa compareTo
-                            - metoda toString pentru afisare
+-> Clasa abstracta Room: - are 2 atribute protected: String nume si int capacity
+                         -  constructori si metodele de setare si obtinere a atributelor specificate
+                         - metoda equals pentru a deosebi doua obicte de tip Room
+                         - metoda compareTo, care este implementata pentru interfata Comparable, astfel incat cand se aplereaza Arrays.sort pentru un array de obiecte de tip Room
+                              se va face compararea dupa criteriul specificat in metoda suprascrisa compareTo
+                         - metoda toString pentru afisare
                             
-   -> Clasele ComputerLab si LectureHall sunt clase extind clasa Room: - au in plus doua atribute private specifice String system si String videoProjector
+ -> Clasele ComputerLab si LectureHall sunt clase extind clasa Room: - au in plus doua atribute private specifice String system si String videoProjector
                                                                        - au constructori si metodele specifice pentru cele doua variabile
                                                                        - ele mostenesc toate atributele si metodele declarate public si protected de la clasa Room
                                                                        
-   -> Clasa Problem: - reprezinta datele problemei, ea are un array de Event-uri numit events si unul Room-uri numit rooms, astfel incat trebuie fiecarui Event (daca este posibil) cate un Room
-                        si folosim cat mai putine obiecte de tip Room
+-> Clasa Problem: - reprezinta datele problemei, ea are un array de Event-uri numit events si unul Room-uri numit rooms, 
+                        astfel incat trebuie fiecarui Event (daca este posibil) cate un Room, folosind cat mai putine obiecte de tip Room
                      - si metodele corespunzatoare de get si set
                      - are si metoda toString folosita pentru afisare
                      
@@ -37,27 +39,30 @@ Pachetul laborator2 contine:
                                  
    -> Clasele GreedyAlgorithm si DSaturAlgorithm: sunt clase ce extind clasa Algorithm, deci mostenesc atributele si metodele acesteia
                               GreedyAlgorithm: - are constructori si metoda solve de tip Solution
-                                               - implementarea algoritmului se afla in metoda solve si consta in: - sortarea rooms si events descrescator in functie de capacity si size
-                                                                                                                  - formarea matricei de adiacenta
-                                                                                                                  - se atribuie primului eveniment o sala
-                                                                                                                  - se parcurge array-ul de Event-uri: - se verifica daca acesta are noduri adiacente carora le-a fost atribuita sala curenta
-                                                                                                                                                       - in functie de asta se stabileste daca se poate atribui din nou o sala care a mai fost atribuite
-                                                                                                                                                        - sau trebuie folosita una noua
-                                                                                                                                                        - evident atribuirea se face si in finctie de capacitatea salii si size-ul evenimentului
-                                                                                                                        - se seteaza assignmentul solutiei cu assignmentul format si se returneaza solutia
+                                               - implementarea algoritmului se afla in metoda solve si consta in: 
+                                                  - sortarea rooms si events descrescator in functie de capacity si size
+                                                  - formarea matricei de adiacenta
+                                                  - se atribuie primului eveniment o sala
+                                                  - se parcurge array-ul de Event-uri: - se verifica daca acesta are noduri adiacente carora le-a fost atribuita sala curenta
+                                                  - in functie de asta se stabileste daca se poate atribui din nou o sala care a mai fost atribuite
+                                                  - sau trebuie folosita una noua
+                                                  - evident atribuirea se face si in finctie de capacitatea salii si size-ul evenimentului
+                                                - se seteaza assignmentul solutiei cu assignmentul format si se returneaza solutia
                             DSaturAlgorithm: - are constructori si metoda solve de tip Solution
-                                             - implementarea algoritmului se afla in metoda solve si consta in: - sortarea rooms si events crescator si descrescator in functie de capacity si size
-                                                                                                                - formarea matricei de adiacenta
-                                                                                                                --> diferenta intre el si Greedy este modul de alegere a evenimentelor
-                                                                                                                -> primul nod este de aceasta data cel cu gradul maxim din graf
-                                                                                                                - se atribuie evenimentului care reprezinta nodul o sala
-                                                                                                                - pentru celelalte noduri care au ramas: - se alege la fiecare pas nodul cu gradul de saturatie cel mai mare dintre nodurile care nu au inca atribuite o sala
-                                                                                                                                                               -daca exista mai multe noduri cu acelasi grad de saturatie se alege nodul cu cei mai multi vecini
-                                                                                                                                                         - se reiau pasii de la greedy: - se verifica daca acesta are noduri adiacente carora le-a fost atribuita sala curenta
-                                                                                                                                                                                        - in functie de asta se stabileste daca se poate atribui din nou o sala care a mai fost atribuite
-                                                                                                                                                                                        - sau trebuie folosita una noua
-                                                                                                                                                                                        - evident atribuirea se face si in finctie de capacitatea salii si size-ul evenimentului
-                                                                                                                - - se seteaza assignmentul solutiei cu assignmentul format si se returneaza solutia
+                                             - implementarea algoritmului se afla in metoda solve si consta in: 
+                                                   - sortarea rooms si events crescator si descrescator in functie de capacity si size
+                                                   - formarea matricei de adiacenta
+                                                        --> diferenta intre el si Greedy este modul de alegere a evenimentelor
+                                                   -> primul nod este de aceasta data cel cu gradul maxim din graf
+                                                   - se atribuie evenimentului care reprezinta nodul o sala
+                                                   - pentru celelalte noduri care au ramas: 
+                                                      - se alege la fiecare pas nodul cu gradul de saturatie cel mai mare dintre nodurile care nu au inca atribuite o sala
+                                                        -daca exista mai multe noduri cu acelasi grad de saturatie se alege nodul cu cei mai multi vecini
+                                                                     - se reiau pasii de la greedy: - se verifica daca acesta are noduri adiacente carora le-a fost atribuita sala curenta
+                                                                                                    - in functie de asta se stabileste daca se poate atribui din nou o sala care a mai fost atribuite
+                                                                                                    - sau trebuie folosita una noua
+                                                                                                    - evident atribuirea se face si in finctie de capacitatea salii si size-ul evenimentului
+                                                     - - se seteaza assignmentul solutiei cu assignmentul format si se returneaza solutia
 
 -> Clasa Main: - se instantiaza evenimentele si salile 
                - se instantiaza si problema si se seteaza datele de intrare declarate anterior
