@@ -1,0 +1,7 @@
+Proiectul Maven contine : - clasa Intersection cu atributul name, constructori + metodele de get si set
+                          - clasa Street implementeaza interfata Comparable si are atributele:
+                                                -> String name,  Intersection intersection1, Intersection intersection2, int length;
+                                                -> metodele de get si set+ constructori
+                                                -> metoda compareTo in functie de length
+                          - clasa Main in care sunt instantiate obiectele, structurate in liste si afisate conform cerintei
+                                                                               
