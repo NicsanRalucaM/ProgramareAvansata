@@ -1,0 +1,45 @@
+Clasa abstracta Node: - contine atributele comune fiecarui nod din retea - String name;
+                                                                         - String hardwareAddress;
+                                                                         - String location;
+                                                                         - Map<Node, Integer> cost = new HashMap<>();
+                      - constructorii si metodele de get si set pentru atributele mentionate
+                      - implementeaza interfata Comparable iar in metoda compareTo compararea este facuta dupa nume astfel, nodurile vor fi sortate dupa nume
+                      - metoda Print( Node e): care pentru nodul e face un StringBuilder cu nodurile care sunt conectate cu nodul e dar care sunt dupa acesta in ordonare
+                        si costurile acestora
+                      - metoda toString folosita pentru afisare, ea apeleaza metoda Print(this)
+                      - metoda getAddress() care returneaza null, ea urmand sa fie suprascrisa in clasele care au adresa IP
+                      
+Clasa Computer extinde clasa Node si implementeaza interfetele Identifiable, Storage: - in plus are atributele String addressIP si int storageCapacity;
+                                                                                      - are constructorii si metodele de set pentru cele doua atribute
+                                                                                      - suprascrie metoda getAddress returnand adresa IP
+                                                                                      - suprascrie metoda getStorageCapacity din interfata Storage
+                                                                                      
+Clasa Router extinde Node si implementeaza Iddentifiable: - in plus are String addressIP
+                                                          - are constructorii si suprascrie metoda getAddress
+                                                          
+Clasa Switch doar extinde clasa Node si are constructorii corespunzatori
+
+Interfata Storage are metoda getStorageCapacity() si metoda default int getStorageCapacity( StorageType type)-- contine un switch, in functie de type
+   In fisierul StorageType este un enum: StorageType {  MEGABYTE, KILOBYTE, BYTE }
+  
+ Clasa Network: - contine o lista cu toate nodurile nodes si una cu cele identifiable nodesIdentifiable
+                - contine constructori, metode de get si set
+                - metoda addNode prin care se adauga noduri in lista nodes
+                - metoda toString, folosita pentru afisarea nodurilor in functie de nume
+                - metoda print care le afiseaza pe cele care sunt identifiable in functie de adresa--> metoda le selecteaza pe cele care au adresa IP si le baga in lista 
+                                                                                                       nodesIdentifiable
+                                                                                                   --> sorteaza lista cu un nou comparator in functie de adresa IP
+                                                                                                   --> afiseaza lista
+                - metoda de getIdentifiableNodes care returneaza nodurile care sunt identifiable
+                
+  Clasa abstracta Algorithm:- are constructor primind ca argument Network network, din care ia nodurile identificabile si face o matrice reprezentativa a grafului
+                           - metoda representGraph parcurge lista nodurilor si salveaza in matrice costurile dintre nodurile conectate
+                           - metoda print care afiseaza matricea
+  
+  Clasa AlgorithmFloydWarshall extinde clasa Algorithm si are metoda solve care parcurgere matricea costurilor si o actualizeaza de fiecare data cand gaseste
+        intre doua noduri prin noduri intermediare, un drum de cost mai mic.
+  
+  
+In Main: - sunt instantiate mai multe noduri de diferite tipuri
+         - este instantiata un Network A si sunt afisate cele doua categori de noduri din A
+         - este instantiat un algoritm si este afisata matricea costurilor
