@@ -2,7 +2,7 @@ Clasa City: -descrie orasul prin atributul cityMap
             -contine metoda printStreets care creeaza un stream pentru lista de strazi si le filtreaza, afisandu-le pe cele care indeplinesc conditiile in functie de parametri
             -metoda nameStreetsIntersections care denumeste strazile si intersectile cu cu nume false generate random cu Faker
    
-Clasa PrimAlgorithm: -foloseste libraria JGraphT
+Clasa PrimAlgorithm: -foloseste JGraphT library
                      -are un constructor in care se formeaza graful in functie de strazile si intersectile orasului
                      -metoda printTree care afiseaza arborele partial de cost minim obtinut
         
