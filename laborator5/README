@@ -1,0 +1,6 @@
+Proiectul contine:- clasele Catalog si Item: - clasa Item are atributele: id,title si location.
+                                             - clasa Catalog are metodele add:->pentru a adauga un nou item in catalog
+                                                                        toString:->pentru afisarea catalogului textual
+                            
+                  - clasa CatalogUtil: - contine metodele save si load care salveaza si incarca catalogul utilizand un fisier JSON 
+                                                                        
