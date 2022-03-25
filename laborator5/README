@@ -3,4 +3,5 @@ Proiectul contine:- clasele Catalog si Item: - clasa Item are atributele: id,tit
                                                                         toString:->pentru afisarea catalogului textual
                             
                   - clasa CatalogUtil: - contine metodele save si load care salveaza si incarca catalogul utilizand un fisier JSON 
+                  - clasa Main cu metodele testCreateSave() si testLoadView() in care este instantiat un nou catalog si se verifica daca metodele de save si load functioneaza corespunzator
                                                                         
