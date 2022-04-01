@@ -1,0 +1,4 @@
+Proiectul contine clasele: MainFrame, ConfigPanel, ControlPanel si DrawingPanel.
+ConfigPanel reprezinta panoul de configurare pentru introducerea parametrilor privind dimensiunea grilei și un buton pentru crearea unui joc nou.
+DrawingPanel este in partea centrala si contine liniile pentru desen.
+Iar in partea de jos a cadrului este panoul de control pentru gestionarea jocului. Acest panou va conține butoanele: Load, Save si Exit.
