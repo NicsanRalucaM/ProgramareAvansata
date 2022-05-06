@@ -1,3 +1,3 @@
 -> am creat o unitate de persistență MapPU utilizand EclipseLink.
--> am utilizat suportul IDE pentru a genera clase de entități din tabelele bazei de date si le-am adaugat in pachetul dedicat lor -entities.
+-> am utilizat suportul IDE pentru a genera clase de entități din tabelele bazei de date si le-am adaugat intr-un pachetul dedicat lor -entities.
 -> am creat un singleton responsabil cu gestionarea unui obiect EntityManagerFactory -MyEntityManagerFactory.
