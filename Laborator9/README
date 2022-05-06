@@ -1,0 +1,3 @@
+Am creat o unitate de persistență MapPU utilizand EclipseLink.
+Am utilizat suportul IDE pentru a genera clase de entități din tabelele bazei de date.
+Am creat un singleton responsabil cu gestionarea unui obiect EntityManagerFactory -MyEntityManagerFactory.
