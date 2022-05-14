@@ -1,0 +1,5 @@
+Am realizat proiectul pentru aplicația server.
+Am implementat clasa responsabilă cu crearea unui ServerSocket care rulează la un port specificat.
+Serverul primeste cereri (comenzi) de la clienți.
+Am facut o clasă responsabilă cu comunicarea cu un socket client. Comunicarea este pe un thread separat.
+Un client citeste comenzile de la tastatură și le trimite către server. Clientul se oprește când citește de la tastatură șirul „exit”.
