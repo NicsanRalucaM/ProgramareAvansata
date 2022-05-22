@@ -1,0 +1,16 @@
+  Am realizat modelul orientat obiect pentru User cu atributele specifice și am generat metodele de get și set pentru ele.
+ Clasa User și SocialNetwork implementează interfața Serializable, astfel încât lista users să persiste și după închiderea server-ului, prin salvarea 
+obiectelor în fișierul file.ser .
+
+  SocialNetwork conține lista users pe care am sincronizat-o astfel încât un thread să nu fie capabil să modifice lista în timp ce alt thread lucrează
+deja pe listă. Clasa are metodele specifice, în special metoda checkIfAllUsersAreDisconnected utilizată când facem server-ul să aștepte deconectarea fiecărui user
+pentru a se putea închide gracefully.
+În clasa Server sunt metodele responsabile cu crearea unui ServerSocket la portul specificat și crearea unui thread pentru fiecare client care vine. Conține și metodele de writeObjectToFile și readObjectFromFile, care se ocupă cu scrierea și citirea obiectelor din fișier.
+
+Clasa ClientRequestThread gestionează comenzile clienților.
+În cadrul unui switch este apelată o metodă specifică fiecărei comenzi.
+Atunci când un user dă comanda de stop se creează un nou thread care verifică și așteaptă ca toți ceilalți users să se deconecteze și apoi închide server-ul.
+Cât timp server-ul așteaptă deconectarea, setând var keepRunning pe false, se blochează acceptarea unui nou user.
+  Am implementat și un timeout folosind setSoTimeout pentru ca serverul să poata întrerupe conexiunea dacă nu primește nicio comandă 
+de la un client conectat în perioada de timp specificată.
+
